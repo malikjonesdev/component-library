@@ -1,8 +1,6 @@
 # Tide UI
 
-Tide UI is a dark-first React component-system showcase built with TypeScript, Tailwind CSS, and Vite. It presents reusable interface patterns in a documentation-style layout with live examples, usage snippets, props tables, and visible component states.
-
-The visual direction is inspired by modern developer tools and documentation sites: deep navy backgrounds, glass surfaces, subtle ocean-toned gradients, and teal/sky accent lighting.
+Tide UI is a React component-system showcase built with TypeScript, Tailwind CSS, and Vite. It presents reusable interface patterns in a documentation-style layout with live examples, usage snippets, props tables, and visible component states.
 
 ## Features
 
