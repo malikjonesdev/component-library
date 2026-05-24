@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  color-scheme: dark;
+  --canvas: #0b1120;
+  --surface: #111827;
+  --subtle: #192337;
+  --stroke: rgb(148 163 184 / 16%);
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --faint: #64748b;
+  --brand: #2dd4bf;
+  --brand-strong: #14b8a6;
+  --brand-light: #5eead4;
+  --brand-soft: rgb(45 212 191 / 12%);
+  --accent: #38bdf8;
+  --accent-soft: rgb(56 189 248 / 12%);
+  --danger: #fb7185;
+  --danger-strong: #f43f5e;
+  --success: #2dd4bf;
+  --success-soft: rgb(45 212 191 / 10%);
+  --warning: #fbbf24;
+  --warning-soft: rgb(251 191 36 / 10%);
+  --code: rgb(2 6 23 / 64%);
+  --code-text: #e2e8f0;
+  --glass: rgb(17 24 39 / 66%);
+  --overlay: rgb(2 6 23 / 76%);
+  --panel-shadow: 0 1px 0 rgb(255 255 255 / 3%), 0 18px 42px rgb(2 6 23 / 26%);
+  --dialog-shadow: 0 32px 90px rgb(2 6 23 / 60%), 0 0 48px rgb(45 212 191 / 8%);
+  --ambient-background:
+    radial-gradient(circle at 72% 2%, rgb(56 189 248 / 12%), transparent 33rem),
+    radial-gradient(circle at 26% 0%, rgb(45 212 191 / 10%), transparent 29rem);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --canvas: #f0fdfa;
+  --surface: #ffffff;
+  --subtle: #e6fffb;
+  --stroke: rgb(15 118 110 / 15%);
+  --text: #0b1120;
+  --muted: #526277;
+  --faint: #718297;
+  --brand-strong: #0f766e;
+  --brand-light: #0f766e;
+  --brand-soft: rgb(20 184 166 / 12%);
+  --accent-soft: rgb(56 189 248 / 10%);
+  --danger: #e11d48;
+  --danger-strong: #be123c;
+  --success: #0f766e;
+  --success-soft: #ccfbf1;
+  --warning: #b45309;
+  --warning-soft: #fef3c7;
+  --code: #0b1120;
+  --code-text: #e2e8f0;
+  --glass: rgb(255 255 255 / 72%);
+  --overlay: rgb(15 23 42 / 48%);
+  --panel-shadow: 0 1px 0 rgb(255 255 255 / 72%), 0 18px 38px rgb(15 118 110 / 8%);
+  --dialog-shadow: 0 30px 70px rgb(15 23 42 / 18%);
+  --ambient-background:
+    radial-gradient(circle at 72% 2%, rgb(56 189 248 / 15%), transparent 34rem),
+    radial-gradient(circle at 25% 0%, rgb(45 212 191 / 18%), transparent 30rem);
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-subtle: var(--subtle);
+  --color-stroke: var(--stroke);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-light: var(--brand-light);
+  --color-brand-soft: var(--brand-soft);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-danger: var(--danger);
+  --color-danger-strong: var(--danger-strong);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-code: var(--code);
+  --color-code-text: var(--code-text);
+  --color-overlay: var(--overlay);
+  --shadow-panel: var(--panel-shadow);
+  --shadow-dialog: var(--dialog-shadow);
+  --font-sans: Inter, "Avenir Next", "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--canvas);
+  background-image: var(--ambient-background);
+  background-attachment: fixed;
+  font-family: var(--font-sans);
+}
+
+button,
+a,
+input,
+select,
+summary {
+  outline: none;
+}
+
+:where(button, a, input, select, summary):focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--brand-soft);
+  color: var(--text);
+}
+
+.glass-panel {
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+}
+
+.brand-gradient {
+  background-image: linear-gradient(135deg, var(--brand), var(--accent));
+}
+
+.brand-glow {
+  box-shadow: 0 0 32px rgb(45 212 191 / 16%), 0 0 56px rgb(56 189 248 / 8%);
+}
